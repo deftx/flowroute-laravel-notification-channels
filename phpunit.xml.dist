@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Plivo Test Suite">
+        <testsuite name="Flowroute Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

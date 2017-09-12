@@ -1,11 +1,26 @@
 <?php
 
-namespace NotificationChannels\Plivo\Exceptions;
+namespace NotificationChannels\Flowroute\Exceptions;
 
+/**
+ * Class CouldNotSendNotification
+ * @package NotificationChannels\Flowroute\Exceptions
+ */
 class CouldNotSendNotification extends \Exception
 {
+
+    /**
+     * @param $response mixed|\Psr\Http\Message\ResponseInterface
+     * @return static
+     */
     public static function serviceRespondedWithAnError($response)
     {
-        return new static("Notification was not sent. Plivo responded with `{$response['status']}: {$response['response']['error']}`");
+        $msg = 'Notification was not sent. Flowroute responded with ';
+
+        if (empty($response)) {
+            return new static($msg . "NULL");
+        } else {
+            return new static("$msg `{$response->getReasonPhrase()}: {$response->getBody()}`");
+        }
     }
 }

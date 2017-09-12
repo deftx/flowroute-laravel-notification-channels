@@ -1,12 +1,12 @@
 {
-    "name": "laravel-notification-channels/plivo",
-    "description": "Plivo SMS notifications driver for Laravel",
+    "name": "flowroute-laravel-notification-channels",
+    "description": "Flowroute SMS notifications driver for Laravel",
     "keywords": [
         "laravel",
         "notifications",
-        "plivo"
+        "flowroute"
     ],
-    "homepage": "https://github.com/laravel-notification-channels/plivo",
+    "homepage": "https://github.com/deftx/flowroute-laravel-notification-channels",
     "license": "MIT",
     "authors": [
         {
@@ -14,14 +14,19 @@
             "email": "sid@koomai.net",
             "homepage": "http://koomai.net",
             "role": "Developer"
+        },
+        {
+            "name": "Rob Vella",
+            "email": "me@robvella.com",
+            "role": "Developer"
         }
     ],
     "require": {
         "php": ">=5.6.4",
-        "illuminate/notifications": "5.3.*|5.4.*",
-        "illuminate/support": "5.3.*|5.4.*",
-        "illuminate/events": "5.3.*|5.4.*",
-        "plivo/plivo-php": "^1.1"
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/events": ">=5.4.0",
+        "illuminate/notifications": ">=5.4.0",
+        "illuminate/support": ">=5.4.0"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.5",
@@ -29,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "NotificationChannels\\Plivo\\": "src"
+            "NotificationChannels\\Flowroute\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "NotificationChannels\\Plivo\\Test\\": "tests"
+            "NotificationChannels\\Flowroute\\Test\\": "tests"
         }
     },
     "scripts": {
