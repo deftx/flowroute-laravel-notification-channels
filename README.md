@@ -6,7 +6,7 @@ This package makes it easy to send SMS notifications using [Flowroute](https://f
 ## Contents
 
 - [Installation](#installation)
-	- [Setting up the Flowroute service](#setting-up-the-service
+	- [Setting up the Flowroute service](#setting-up-the-service)
 - [Usage](#usage)
 	- [Available Message methods](#available-message-methods)
 - [Changelog](#changelog)
