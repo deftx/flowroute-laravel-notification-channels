@@ -1,5 +1,5 @@
 {
-    "name": "flowroute-laravel-notification-channels",
+    "name": "deftx/flowroute-laravel-notification-channels",
     "description": "Flowroute SMS notifications driver for Laravel",
     "keywords": [
         "laravel",
