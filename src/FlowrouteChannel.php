@@ -2,6 +2,8 @@
 
 namespace NotificationChannels\Flowroute;
 
+use GuzzleHttp\Psr7\Response;
+use Illuminate\Support\Str;
 use NotificationChannels\Flowroute\Exceptions\CouldNotSendNotification;
 use Illuminate\Notifications\Notification;
 
@@ -50,6 +52,10 @@ class FlowrouteChannel
 
         if (empty($message)) {
             return;
+        } else if (env('SMS_FAKE')) {
+            $response = new Response(200, [], json_encode([
+                'data' => ['id' => Str::random(16)]]));
+            return $response;
         } else if (is_string($message)) {
             $message = new FlowrouteMessage($message);
         }
