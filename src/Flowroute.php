@@ -61,8 +61,8 @@ class Flowroute
 
     /**
      * @param $data
-     *
      * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws GuzzleHttp\Exception\GuzzleException
      */
     public function sendSms($data)
     {
@@ -70,11 +70,32 @@ class Flowroute
         return $this->post('messages', $data);
     }
 
+
+    /**
+     * @param $mdr
+     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws GuzzleHttp\Exception\GuzzleException
+     */
+    public function getMdr($mdr)
+    {
+        return $this->get('messages/' . $mdr);
+    }
+
     /**
      * @param $url
      * @param $data
-     *
      * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws GuzzleHttp\Exception\GuzzleException
+     */
+    protected function get($url) {
+        return $this->request('GET', $url);
+    }
+
+    /**
+     * @param $url
+     * @param $data
+     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws GuzzleHttp\Exception\GuzzleException
      */
     protected function post($url, $data)
     {
@@ -86,21 +107,11 @@ class Flowroute
     }
 
     /**
+     * @param $method
      * @param $url
-     * @param $data
-     *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
-     */
-    protected function get($url, $data) {
-        return $this->request('GET', $url);
-    }
-
-    /**
-     * @param       $method
-     * @param       $url
      * @param array $options
-     *
      * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws GuzzleHttp\Exception\GuzzleException
      */
     protected function request($method, $url, $options = [])
     {
