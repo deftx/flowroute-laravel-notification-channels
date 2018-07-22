@@ -41,7 +41,7 @@ class Flowroute
         $this->access_key = $config['access_key'];
         $this->secret_key = $config['secret_key'];
         $this->from = $config['from_number'];
-        $this->send_to_override = $config['send_to_override'];
+        $this->send_to_override = $config['send_to_override'] ?? null;
         $this->webhook_url = $config['webhook_url'];
 
         $this->c = new GuzzleHttp\Client([
