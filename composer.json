@@ -1,12 +1,12 @@
 {
-    "name": "deftx/flowroute-laravel-notification-channels",
+    "name": "robvella/flowroute-laravel-notification-channels",
     "description": "Flowroute SMS notifications driver for Laravel",
     "keywords": [
         "laravel",
         "notifications",
         "flowroute"
     ],
-    "homepage": "https://github.com/deftx/flowroute-laravel-notification-channels",
+    "homepage": "https://github.com/robvella/flowroute-laravel-notification-channels",
     "license": "MIT",
     "authors": [
         {
